@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">            
+    
+  <title>Terms and Privacy Policy | S W V N K LAB</title>
+  <style>
+    body {
+        font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #000000; /* Adjust the background color as needed */
+    color: white; /* Adjust the text color as needed */
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Adjust the font size as needed */
+}
+     footer {
+      background-color: #000000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+    main {
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #fbfbfb;
+    }
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    button {
+      background-color: #ffd700;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #e5c500;
+    }
+    h5 {
+            font-size: 13px;
+            color: #fff;
+            margin: 0;
+        }
+       h5 a {
+            color: #fff; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h5:hover {
+            text-decoration: underline;
+            color: #FFD700;
+        }
+        .logo {
+            width: 80px;
+            height: auto;
+            filter: drop-shadow(7px 5px 5px #FFD700);
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+        <img src="img/logo.jpg" alt="SWVNK Lab Logo" class="logo">
+    </div>
+    <h1>S W V N K LAB - Terms and Privacy Policy</h1>
+  </header>
+
+  <main>
+    <div id="consent-modal" class="modal">
+      <div class="modal-content">
+        <h2>Terms and Conditions and Privacy Policy</h2>
+        <p>By continuing to use this site, you agree to our <a href="#terms">Terms and Conditions</a> and <a href="#privacy-policy">Privacy Policy</a>.</p>
+        <button id="accept-btn">Accept</button>
+        <button id="reject-btn">Reject</button>
+      </div>
+    </div>
+
+    <section id="terms">
+      <h2>Terms and Conditions</h2>
+      <p><b>Welcome to S W V N K LAB.</b><br>
+         These terms and conditions outline the rules and regulations for the use of our website and services. By accessing or using our site, you agree to comply with these terms.</p>
+      <p>All content, trademarks, and other intellectual property on this website are owned by S W V N K LAB or its licensors. You may not use any content without our prior written consent.</p>
+      <p>Users must comply with all applicable laws and regulations. You agree not to use our services for any unlawful or prohibited purpose.</p>
+      <p>S W V N K LAB will not be liable for any indirect, incidental, or consequential damages arising from your use of our site or services.</p>
+      <p>We may update these terms from time to time. We will notify you of any significant changes by posting the new terms on our website.</p>
+      <p>If you have any questions about these terms, please contact us at <a href="mailto:contact@swvnklab.com">contact@swvnklab.com</a>.</p>
+    </section>
+
+    <section id="privacy-policy">
+      <h2>Privacy Policy</h2>
+      <p>We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information.</p>
+      <p>We collect personal information such as your name, email address, and any other details you provide when you use our services or contact us.</p>
+      <p>We use your information to provide and improve our services, respond to inquiries, and send relevant updates. We do not share your information with third parties without your consent, except as required by law.</p>
+      <p>We implement security measures to protect your personal data from unauthorized access or disclosure. However, no method of transmission over the Internet or electronic storage is completely secure.</p>
+      <p>You have the right to access, correct, or delete your personal information. If you wish to exercise these rights, please contact us.</p>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on our website.</p>
+      <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@swvnklab.com">contact@swvnklab.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <h5><a href="design-graphic-design-portfolio-website-in-black-white-dark-classic-minimal-style">Designed by: Mokwanatle Rebaone</a></h5>
+        <h6>&copy; <span id="year"></span> EsmyCode. All rights reserved.</h6>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    window.onload = function() {
+      var modal = document.getElementById('consent-modal');
+      var acceptBtn = document.getElementById('accept-btn');
+      var rejectBtn = document.getElementById('reject-btn');
+
+      if (!localStorage.getItem('consent')) {
+        modal.style.display = 'block';
+      }
+
+      acceptBtn.onclick = function() {
+        localStorage.setItem('consent', 'accepted'); // Save acceptance to local storage
+        window.location.href = 'index.html'; // Navigate to the home page
+      }
+
+      rejectBtn.onclick = function() {
+        localStorage.setItem('consent', 'rejected'); // Save rejection to local storage
+        window.location.href = '404.html'; // Redirect to 404 error page
+      }
+    }
+  </script>
+</body>
+</html>

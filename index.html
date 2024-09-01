@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -35,6 +36,7 @@
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
+    left: 0;
 }
 
 
@@ -49,7 +51,19 @@ header:hover {
             filter: drop-shadow(7px 5px 5px #FFD700);
         }
 
-      
+     /* Example Media Queries */
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+ 
 /* Hamburger Menu */
 .hamburger-menu {
     display: none; 
@@ -110,18 +124,18 @@ header:hover {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
-    font-size: 18px; /* Large text */
+    font-size: 18px; 
     position: relative;
     display: block;
     transition: color 0.3s ease;
 }
 
-/* Hover Effect */
+
 .navigation a:hover {
     color: #ffd700;
 }
 
-/* Underline Hover Effect */
+
 .navigation a::after {
     content: "";
     display: block;
@@ -161,11 +175,11 @@ header:hover {
     }
    
     .menu {
-        display: block; /* Show menu on larger screens */
-        position: static; /* Ensure it stays in place */
-        width: auto; /* Adjust width as needed */
-        height: auto; /* Adjust height as needed */
-        background: none; /* Remove background color if needed */
+        display: block; 
+        position: static; 
+        width: auto; 
+        height: auto; 
+        background: none; 
         top: auto;
         
     }
@@ -276,6 +290,7 @@ p {
             line-height: 1.6;
         }
 
+
         .about-images {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -284,33 +299,36 @@ p {
             justify-content: center;
         }
 
-
 @media (max-width: 768px) {
     .about-images {
         grid-template-columns: repeat(1, 1fr); 
         padding: 20px; 
-        justify-items: center; 
+        justify-items: center;
     }
 }
 
 .about-images img {
-        width: 80%; 
-    }
+    width: 80%; 
+    height: auto;
+}
 
 @media (max-width: 480px) {
     .about-images {
         grid-template-columns: 1fr; 
     }
+
+    .about-images img {
+        width: 100%; 
+        height: auto; 
+    }
 }
 
-.about-images img {
-    width: 100%; 
-    height: auto; 
-}
-
+/* Card Section */
 .card {
     width: 400px; 
+    max-width: 400px; 
     height: 550px; 
+    margin: 0 auto 20px;
     perspective: 1000px;
 }
 
@@ -322,12 +340,7 @@ p {
     transform-style: preserve-3d;
 }
 
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front,
- {
+.card-front {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -339,118 +352,115 @@ p {
     height: 100%;
     object-fit: cover;
     border-radius: 8px; 
+} 
+
+/* Benefits Section */
+.benefits-section {
+    padding: 2em;
+    background-color: #ffffff; 
+    color: #000000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-        .benefits-section {
-            padding: 2em;
-            background-color: #ffffff; 
-            color: #000000;
-            text-align: center;
-            justify-content: center;
-        }
+.benefits-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
 
-        .benefits-section h2 {
-            font-size: 2em;
-            margin-bottom: 1em;
-        }
+.benefits-content {
+    margin-bottom: 2em;
+}
 
-        .benefits-content {
-            margin-bottom: 2em;
-        }
-
-        .benefits-items {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px; 
-            padding: 50px;
-            justify-content: center;
-        }
-
+.benefits-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    width: 100%;
+    max-width: 1200px;
+    padding: 50px;
+    justify-content: center;
+}
 
 @media (max-width: 768px) {
     .benefits-items {
-        grid-template-columns: repeat(1, 1fr); 
+        grid-template-columns: 1fr; 
+        padding: 20px;
+    }
 
-        .benefits-section {
-            padding: 1em;
-            font-size: 0.9em;
-            background-color: #ffffff; 
-            color: #000000;
-            text-align: center;
-            justify-content: center;
-        }
+    .benefits-section {
+        padding: 1em;
+        font-size: 0.9em;
     }
 }
-
 
 @media (max-width: 480px) {
     .benefits-items {
         grid-template-columns: 1fr; 
-        .benefits-section {
-            padding: 2em;
-            background-color: #ffffff; 
-            color: #000000;
-            text-align: center;
-            justify-content: center;
-        }
+        padding: 10px;
+    }
+
+    .benefits-section {
+        padding: 1.5em;
     }
 }
 
-.benefits-items{
-    width: 100%; 
-    height: auto; 
-    justify-content: center;
+
+.benefit-item {
+    max-width: 300px;
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0 12px 16px #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
-        .benefit-item {
-            max-width: 300px;
-            background-color: #ffffff;
-            padding: 1.5em;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            transition: transform 0.3s ease;
-            border-radius: 15px;
-            box-shadow: 0 12px 16px #000000;
-            justify-content: center;
-            display: flex;
-            flex-direction: column;
-        }
 
-        .benefit-item:hover {
-            transform: translateY(-10px);
-        }
+.benefit-item:hover {
+    transform: translateY(-10px);
+}
 
-        .benefit-item i {
-            font-size: 4em;
-            margin-bottom: 1em;
-            color: #FFD700; 
-            transition: transform 0.3s ease;
-        }
+.benefit-item i {
+    font-size: 4em;
+    margin-bottom: 1em;
+    color: #FFD700; 
+    transition: transform 0.3s ease;
+}
 
-        .benefit-item i:hover {
-            transform: scale(1.2); 
-            color: #ffffff; /
-        }
+.benefit-item i:hover {
+    transform: scale(1.2); 
+    color: #000;
+}
 
-        .benefit-item h3 {
-            font-size: 1.5em;
-            margin-bottom: 0.5em;
-        }
-        .benefit-item img {
-            width: 80px;
-            height: auto;
-            margin-bottom: 1em;
-            transition: transform 0.3s ease;
-        }
+.benefit-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
 
-        .benefit-item img:hover {
-            transform: scale(1.2); 
-            box-shadow: 0 0 30px 1px #000000;
-        }
+.benefit-item img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1em;
+    transition: transform 0.3s ease;
+}
 
-        .benefit-item p {
-            font-size: 1em;
-        }
+.benefit-item img:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 0 30px 1px #000000;
+}
+
+.benefit-item p {
+    font-size: 1em;
+}
+
 
         .subscribe-section {
             display: flex;
@@ -505,8 +515,8 @@ p {
         }
 
         .subscribe-form button:hover {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #000;
+            color: #fff;
         }
         
 
@@ -561,7 +571,7 @@ footer .social-icons a:hover {
     box-shadow: 0 10px 20px #ffffff; 
 }
 
-/* Fade in and out animation */
+
 @keyframes fadeInOut {
     0%, 100% {
         opacity: 0;
@@ -625,7 +635,7 @@ footer .social-icons a:hover {
         }
         #terms {
   padding: 20px;
-  background-color: #f9f9f9; /* Adjust background color as needed */
+  background-color: #f9f9f9;
 }
 
 #terms h2 {
@@ -633,28 +643,13 @@ footer .social-icons a:hover {
 }
 
 .footer-link {
-  color: #ffd700; /* Adjust link color as needed */
+  color: #ffd700; 
   text-decoration: none;
 }
 
 .footer-link:hover {
-  text-decoration: underline; /* Optional: Add underline on hover */
+  text-decoration: underline;
 }
-        .unsubscribe-link {
-    margin-top: 10px;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.unsubscribe-link a {
-    color: #ff0000; /* You can change the color to match your design */
-    text-decoration: none;
-}
-
-.unsubscribe-link a:hover {
-    text-decoration: underline;
-}
-
     </style>
 </head>
 <body>
@@ -683,10 +678,11 @@ footer .social-icons a:hover {
 
         <div class="video-background">
             <video autoplay muted loop>
-                <source src="img/VID-20240821-WA0001.mp4" type="video/mp4">
+                <source src="img/Retro Vintage Black The End Animation Video.MP4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             </div>
+            
     <section class="hero-section" id="home">
         <div class="overlay"></div>
         <div class="hero-content">
@@ -707,21 +703,21 @@ footer .social-icons a:hover {
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="img/swanky.jpg" alt="Swanky">
+                            <img src="img/img1.JPG" alt="Swanky">
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="img/team.jpg" alt="The Team">
+                            <img src="img/img2.JPG" alt="The Team">
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
-                            <img src="img/_DSC1058.jpg" alt="Behind the Scenes">
+                            <img src="img/img3.JPG" alt="Behind the Scenes">
                         </div>
                     </div>
                 </div>
@@ -752,18 +748,20 @@ footer .social-icons a:hover {
             </div>
         </div>
     </section>
-
     <section class="subscribe-section" id="join">
+        <form action="/subscribe" method="post"></form>
         <div class="subscribe-form">
             <h2>Stay Ahead of the Curve</h2>
             <p>Join the Creative Community.</p>
             <input type="text" placeholder="Name">
             <input type="email" placeholder="Email Address">
             <button>Subscribe Now!</button>
-              <p class="unsubscribe-link">
-            <a href="*|UNSUB|*">Unsubscribe</a>
-        </p>
+            <p class="unsubscribe-link" style="text-align: center; font-family: Arial, sans-serif; font-size: 14px; color: #666; margin: 20px 0;">
+                <a href="*|UNSUB|*" style="color: #000; text-decoration: none; font-weight: bold;">Unsubscribe</a>
+            </p>
+            
         </div>
+        </form>
     </section>
 
     <footer id="contact">
@@ -780,7 +778,7 @@ footer .social-icons a:hover {
             <a href="https://instagram.com" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
         </div>
         <div class="contact-info">
-            <p>Email: info@swvnklab.co.za | Phone: +2783 950 1237</p>
+            <p>Email: info@swvnklab.co.za | Phone: (083) 950 1237</p>
         </div>
         <h5><a href="design-graphic-design-portfolio-website-in-black-white-dark-classic-minimal-style">Designed by: Mokwanatle Rebaone</a></h5>
         <h6>&copy; <span id="year"></span> EsmyCode. All rights reserved.</h6>
@@ -813,8 +811,34 @@ function toggleMenu() {
     }
 }
 
+app.post('/send-newsletter', (req, res) => {
+    const query = 'SELECT * FROM subscribers';
 
+    db.query(query, (err, results) => {
+        if (err) {
+            res.status(500).send('Error fetching subscribers');
+        } else {
+            results.forEach((subscriber) => {
+                const mailOptions = {
+                    from: 'r...@gmail.com',
+                    to: subscriber.email,
+                    subject: 'Swvnk Lab Monthly Newsletter',
+                    text: `Hello ${subscriber.name},\n\nHere is our latest newsletter...`
+                };
 
+                transporter.sendMail(mailOptions, (error, info) => {
+                    if (error) {
+                        console.log('Error sending to ' + subscriber.email + ': ' + error);
+                    } else {
+                        console.log('Newsletter sent to: ' + subscriber.email);
+                    }
+                });
+            });
+            res.status(200).send('Newsletter sent');
+        }
+    });
+});
     </script>
 </body>
 </html>
+

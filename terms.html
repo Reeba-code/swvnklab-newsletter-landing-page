@@ -106,33 +106,44 @@ h1 {
             height: auto;
             filter: drop-shadow(7px 5px 5px #FFD700);
         }
-    .go-home-btn {
+ 
+.bottom-div {
+  position: fixed; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: #222; 
+  padding: 10px 0; 
+  text-align: center; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.go-home-btn {
   display: inline-block;
-  background-color: #fd700; /* Yellow background */
-  color: #fff; /* White text */
-  padding: 12px 24px; /* Padding for size */
+  background-color: #ffd700; 
+  color: #000; 
+  padding: 12px 24px; 
   border: none;
-  border-radius: 8px; /* Rounded corners */
-  font-size: 16px; /* Font size */
+  border-radius: 8px; 
+  font-size: 16px; 
   text-align: center;
-  text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-  cursor: pointer; /* Pointer cursor */
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s; 
+  cursor: pointer; 
 }
 
 .go-home-btn:hover {
-  background-color: #f0b500; /* Darker yellow on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #f0b500; 
+  transform: scale(1.05);
 }
 
 .go-home-btn:focus {
-  outline: none; /* Remove default focus outline */
+  outline: none; 
 }
 
 .go-home-btn:active {
-  background-color: #e6a700; /* Even darker yellow when clicked */
+  background-color: #e6a700; 
 }
-
   </style>
 </head>
 <body>
@@ -175,7 +186,9 @@ h1 {
       <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@swvnklab.com">contact@swvnklab.com</a>.</p>
     </section>
   </main>
-<a href="index.html" class="go-home-btn">Go Back Home</a>
+<div class="bottom-div">
+  <a href="index.html" class="go-home-btn">Go Back Home</a>
+</div>
 
   <footer>
     <h5><a href="design-graphic-design-portfolio-website-in-black-white-dark-classic-minimal-style">Designed by: Mokwanatle Rebaone</a></h5>
